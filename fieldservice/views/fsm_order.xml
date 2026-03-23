@@ -117,25 +117,24 @@
                                     <field name="scheduled_date_end" readonly="1" />
                                 </group>
                             </group>
-                            <group string="Request Workers" name="request_workers">
-                                <field
-                                    name="person_ids"
-                                    widget="many2many"
-                                    nolabel="1"
-                                    context="{'search_default_location_ids': location_id}"
-                                >
-                                    <tree>
-                                        <field name="name" />
-                                        <field
-                                            name="category_ids"
-                                            widget="many2many_tags"
-                                            options="{'color_field': 'color'}"
-                                        />
-                                        <field name="phone" />
-                                        <field name="email" />
-                                    </tree>
-                                </field>
-                            </group>
+                            <separator string="Request Workers" />
+                            <field
+                                name="person_ids"
+                                widget="many2many"
+                                nolabel="1"
+                                context="{'search_default_location_ids': location_id}"
+                            >
+                                <tree>
+                                    <field name="name" />
+                                    <field
+                                        name="category_ids"
+                                        widget="many2many_tags"
+                                        options="{'color_field': 'color'}"
+                                    />
+                                    <field name="phone" />
+                                    <field name="email" />
+                                </tree>
+                            </field>
                         </page>
                         <page string="Instructions" name="instructions_page">
                             <group string="Instructions" name="instructions_grp">

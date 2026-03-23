@@ -4,4 +4,9 @@
         <field name="bundle">web.assets_backend</field>
         <field name="path">/agreement_legal/static/src/js/agreement.js</field>
     </record>
+    <record id="assets_backend_xml" model="ir.asset">
+        <field name="name">agreement_legal qweb</field>
+        <field name="bundle">web.assets_backend</field>
+        <field name="path">/agreement_legal/static/src/xml/agreement.xml</field>
+    </record>
 </odoo>

@@ -49,6 +49,7 @@ class FSMPerson(models.Model):
         offset=0,
         limit=None,
         order=None,
+        count=None,
         access_rights_uid=None,
     ):
         res = super(FSMPerson, self)._search(
@@ -56,6 +57,7 @@ class FSMPerson(models.Model):
             offset=offset,
             limit=limit,
             order=order,
+            count=count,
             access_rights_uid=access_rights_uid,
         )
         # Check for domain first having location_ids as default filter
