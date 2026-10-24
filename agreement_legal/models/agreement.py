@@ -457,13 +457,14 @@ class Agreement(models.Model):
             "res_id": res.id,
         }
 
-    @api.model
-    def create(self, vals):
-        if vals.get("code", _("New")) == _("New"):
-            vals["code"] = self.env["ir.sequence"].next_by_code("agreement") or _("New")
-        if not vals.get("stage_id"):
-            vals["stage_id"] = self._get_default_stage_id()
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get("code", _("New")) == _("New"):
+                vals["code"] = self.env["ir.sequence"].next_by_code("agreement") or _("New")
+            if not vals.get("stage_id"):
+                vals["stage_id"] = self._get_default_stage_id()
+        return super().create(vals_list)
 
     # Increments the revision on each save action
     def write(self, vals):
